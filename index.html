@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <meta> name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" <meta/>
+    <script src="https://aframe.io/releases/0.6.0/aframe.min.js​"> </script>
+    <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"> </script>
+    <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"> </script>
+    <script src="https://recast-api.donmccurdy.com/aframe-inspector-plugin-recast.js">> </script>
+    <script src="shoot.js"></script>
+
+</head>
+<a-asset-item id="collider" src="/models/navmesh.gltf"></a-asset-item>
+<!--Navigation Mesh-->
+<a-entity
+id="Navigation-mesh"
+position="0 -1 0" gltf-model="#collider" visible="false" nav-mesh></a-entity>
+ 
+<!--Camer and Cursor-->
+<a-entity id="camera-rig" movement-controls="speed:0.2;constrainToNavMesh:true" position="0 0 5">
+<a-entity id="camera" camera-position="0 1.6 0"
+look-controls="pointerLockEnable:false"></a-entity>
+<a-entity id="weapon" gltf-model="#shooter" position="0.17 -2.76 -0.08" rotation="-20 -145 20" scale="0.05 0.05 0.05" player-movement></a-entity>
+</html>
